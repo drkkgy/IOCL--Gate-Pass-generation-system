@@ -10,7 +10,7 @@ router.get('/test', function(req,res,next){
     res.send('API working')
 });
 // Fetching the result to display it at the reception system
-app.get('/speed_violation_details/:Car_Number', (req,res,next)=>{
+router.get('/Visitors_Appointment_Display/', (req,res,next)=>{
 
 MongoClient.connect('mongodb://ankit:1234567890@ds219879.mlab.com:19879/speed_analysis', (err,db)=> {
 
