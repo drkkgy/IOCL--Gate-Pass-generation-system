@@ -17,7 +17,7 @@ if (typeof localStorage === "undefined" || localStorage === null) {
 //Creating storage object 
  const storage = require('multer-gridfs-storage') ({
 
- 	url: 'mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl_gate_pass_booking',
+ 	url: 'mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl_gate_pass_booking/Visitors_Image',
  	file: (req,file) => {
       if(file.mimetyoe === 'image/jpeg')  {
       	return {
@@ -44,14 +44,14 @@ router.post('/Visitor_Image_upload',(req, res,next)=> {
  var nPromise = new Promise(function(resolve, err){
    
 
-  mongoose.connect('mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl_gate_pass_booking');
+  mongoose.connect('mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl_gate_pass_booking/Visitors_Image');
   var conn = mongoose.connection;
   var path = require('path');
   //require GridFs
   var Grid = require('gridfs-stream');
   //require filesystem module
   var fs = require('fs');
-  // where to find the video in the filesystem that we will store in the DB
+  // Loction of the image file in local storage to be stored in DB
   //var filePath = req.body.FilePath;
   var imgPath = path.join(__dirname,'../Routes/readFrom/'+ req.body.File_Name + '.png');//<-------------------edit this
   Grid.mongo = mongoose.mongo;
@@ -62,7 +62,7 @@ router.post('/Visitor_Image_upload',(req, res,next)=> {
   	// Writing the file
   	var writestream = gfs.createWriteStream({
      // File name in mongodb
-     filename: JSON.stringify(req.body.Visitors_Name)//<-----------------------------------------------------change
+     filename: JSON.stringify(req.body.Visitors_Name + req.body.Time_stamp)//<-----------------------------------------------------change
     
   	});
   	// Creating the read Stream from where the image

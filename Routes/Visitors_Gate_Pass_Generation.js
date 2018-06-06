@@ -4,21 +4,21 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var bodyParser = require('body-parser');
-var MongoClient = require('mongodb').MongoClient,assert = require('assert');
+var MongoClient = require('mongodb').MongoClient, assert = require('assert');
 var fs = require('fs');
 
 // Creating local storage 
 
 
 if (typeof localStorage === "undefined" || localStorage === null) {
-  var LocalStorage = require('node-localstorage').LocalStorage;
-  localStorage = new LocalStorage('./scratch');
+var LocalStorage = require('node-localstorage').LocalStorage;
+localStorage = new LocalStorage('./scratch');
 }
 
 //Creating storage object 
  const storage = require('multer-gridfs-storage') ({
 
- 	url: 'mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl_gate_pass_booking',
+ 	url: 'mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl_gate_pass_booking/Visitors_Image',
  	file: (req,file) => {
       if(file.mimetyoe === 'image/jpeg')  {
       	return {
@@ -46,7 +46,7 @@ MongoClient.connect('mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl
     assert.equal(null,err);
     console.log("Sucessfully connected to the mongodb client");
     // sending the information
- db.collection('collection name here').find({"Time-Stamp": req.params.Time_Stamp},{_id: 0}).toArray((err,result)=>{
+ db.collection('Booked_Appointment').find({}).toArray((err,result)=>{ //'Time-Stamp': req.params.Time_Stamp
 
 if(result == null)
   {
@@ -67,7 +67,7 @@ router.post('/Gate_Pass_Generation_Engine/Mark_after_Generation' , (req,res,next
     console.log("Sucessfully connected to the mongodb client");
 
     // updating info
-    db.collection.update(
+    db.collection('Booked_Appointment').update(
    {"Time-Stamp": req.body.Time_Stamp},
    {"Attended_Status?": false},
    {
@@ -85,7 +85,7 @@ Grid.mongo = mongoose.mongo;
 var gfs = new Grid(mongoose.connection.db);
 
 
-gfs.files.find({ "filename": req.params.Time_Stamp}).toArray(function (err, files) { //<------------------check------------]
+gfs.files.find({ "filename": req.body.Visitors_Name + req.body.Time_stamp}).toArray(function (err, files) { //<------------------check------------]
 
     if(files.length===0){
         return res.status(400).send({

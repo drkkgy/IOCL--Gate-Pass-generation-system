@@ -18,7 +18,7 @@ router.post('/uploading_request',(req,res,next)=> {
     assert.equal(null,err);
     console.log("Sucessfuly connected to the mongodb client");
     // Registring the information in the server for the visitor
-    db.collection('-->collection name<--').insertOne({
+    db.collection('Booked_Appointment').insertOne({
     	"Name_of_visitor": req.body.Name_of_visitor,
     	"Name_of_the_Host": req.body.Name_of_the_Host,
     	"Visitors_company": req.body.Visitors_company,
@@ -31,7 +31,7 @@ router.post('/uploading_request',(req,res,next)=> {
 
     })
     .then((result)=>{
-    	res.json({"status":"200","message": "Visitors details registered sucessfully"});
+    	res.json({"status":"200","message": "Visitors details registered successfully"});
     })
 	});
 
