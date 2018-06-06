@@ -12,7 +12,7 @@ router.get('/test', function(req,res,next){
 // Fetching the result to display it at the reception system
 router.get('/Visitors_Appointment_Display/', (req,res,next)=>{
 
-MongoClient.connect('mongodb://ankit:1234567890@ds219879.mlab.com:19879/speed_analysis', (err,db)=> {
+MongoClient.connect('mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl_gate_pass_booking', (err,db)=> {
 
     assert.equal(null,err);
     console.log("Sucessfully connected to the mongodb client");

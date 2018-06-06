@@ -13,7 +13,7 @@ router.get('/test', function(req,res,next){
 // Submitting the request for an appointment to the database
 router.post('/uploading_request',(req,res,next)=> {
 
-	MongoClient.connect('mongodb://anki:1234567890@ds012198.mlab.com:12198/user_personal_details',(err,db)=>{
+	MongoClient.connect('mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl_gate_pass_booking',(err,db)=>{
      
     assert.equal(null,err);
     console.log("Sucessfuly connected to the mongodb client");

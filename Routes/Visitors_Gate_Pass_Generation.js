@@ -18,7 +18,7 @@ if (typeof localStorage === "undefined" || localStorage === null) {
 //Creating storage object 
  const storage = require('multer-gridfs-storage') ({
 
- 	url: 'mongodb://ankit:1234567890@ds012188.mlab.com:12188/user_report_upload',
+ 	url: 'mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl_gate_pass_booking',
  	file: (req,file) => {
       if(file.mimetyoe === 'image/jpeg')  {
       	return {
@@ -41,7 +41,7 @@ router.get('/test', function(req,res,next){
 // Fetching the details from the database for the form
 router.get('/Gate_Pass_Generation_Engine/:Time_Stamp', (req,res,next)=>{
 // fetching details
-MongoClient.connect('mongodb://ankit:1234567890@ds219879.mlab.com:19879/speed_analysis', (err,db)=> {
+MongoClient.connect('mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl_gate_pass_booking', (err,db)=> {
 
     assert.equal(null,err);
     console.log("Sucessfully connected to the mongodb client");
@@ -61,7 +61,7 @@ if(result == null)
 
 router.post('/Gate_Pass_Generation_Engine/Mark_after_Generation' , (req,res,next)=>{
 
-	MongoClient.connect('mongodb://ankit:1234567890@ds219879.mlab.com:19879/speed_analysis', (err,db)=> {
+	MongoClient.connect('mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl_gate_pass_booking', (err,db)=> {
 
     assert.equal(null,err);
     console.log("Sucessfully connected to the mongodb client");

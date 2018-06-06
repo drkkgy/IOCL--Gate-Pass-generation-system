@@ -17,7 +17,7 @@ if (typeof localStorage === "undefined" || localStorage === null) {
 //Creating storage object 
  const storage = require('multer-gridfs-storage') ({
 
- 	url: 'mongodb://ankit:1234567890@ds012188.mlab.com:12188/user_report_upload',
+ 	url: 'mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl_gate_pass_booking',
  	file: (req,file) => {
       if(file.mimetyoe === 'image/jpeg')  {
       	return {
@@ -44,7 +44,7 @@ router.post('/Visitor_Image_upload',(req, res,next)=> {
  var nPromise = new Promise(function(resolve, err){
    
 
-  mongoose.connect('mongodb://ankit:1234567890@ds012188.mlab.com:12188/user_report_upload');
+  mongoose.connect('mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl_gate_pass_booking');
   var conn = mongoose.connection;
   var path = require('path');
   //require GridFs
