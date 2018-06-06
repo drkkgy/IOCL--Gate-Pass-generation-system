@@ -61,19 +61,46 @@ if(result == null)
 
 router.post('/Gate_Pass_Generation_Engine/Mark_after_Generation' , (req,res,next)=>{
 
-	MongoClient.connect('mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl_gate_pass_booking', (err,db)=> {
+
+    // Checking if the record exist or not
+
+    MongoClient.connect('mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl_gate_pass_booking', (err,db)=> {
 
     assert.equal(null,err);
     console.log("Sucessfully connected to the mongodb client");
+    // sending the information
+  db.collection('Booked_Appointment').findOne({"Time-Stamp": req.body.Time_Stamp}
+  
+)
+.then(function(result) {
+	console.log(result)
+  if(result == null)
+  {
+  	res.json({"status": 404 , "message": "Apointment not found"});
+  }
+  
+}) 
+});
+    function pause(){
+MongoClient.connect('mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl_gate_pass_booking', (err,db)=> {
 
+    assert.equal(null,err);
+    console.log("Sucessfully connected to the mongodb client");
+   
     // updating info
     db.collection('Booked_Appointment').update(
-   {"Time-Stamp": req.body.Time_Stamp},
-   {"Attended_Status?": false},
+   {'Time-Stamp': req.body.Time_Stamp },
    {
-     "upsert": true
-  });
+     $set: {
+       'Attended_Status?': false
+     },
+   }
+   ).then((result1)=>{
+    res.json({"status": 200, "message": "Appointment marked sucessfully"});
+ })
  });
+}
+setTimeout(pause, 1000);
 });
 
 // image download to be displayed on the pass

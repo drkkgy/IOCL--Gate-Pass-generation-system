@@ -86,7 +86,14 @@ URL--> http://127.0.0.1:3000/Visitors_Gate_Pass_Generation/Gate_Pass_Generation_
 
 Marking the appointment as completed after generating the pass
 
+Fire a Post Request
+
 URL--> http://127.0.0.1:3000/Visitors_Gate_Pass_Generation/Gate_Pass_Generation_Engine/Mark_after_Generation
+
+Sample Post Request
+{
+"Time_Stamp": "2018/07/06:13:16"
+}
 ******************************
 4.3
 
