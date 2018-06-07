@@ -18,7 +18,7 @@ localStorage = new LocalStorage('./scratch');
 //Creating storage object 
  const storage = require('multer-gridfs-storage') ({
 
- 	url: 'mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl_gate_pass_booking/Visitors_Image',
+ 	url: 'mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl_gate_pass_booking',
  	file: (req,file) => {
       if(file.mimetyoe === 'image/jpeg')  {
       	return {
@@ -39,21 +39,21 @@ router.get('/test', function(req,res,next){
     res.send('API working')
 });
 // Fetching the details from the database for the form
-router.get('/Gate_Pass_Generation_Engine/:Time_Stamp', (req,res,next)=>{
+router.post('/Gate_Pass_Generation_Engine', (req,res,next)=>{
 // fetching details
 MongoClient.connect('mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl_gate_pass_booking', (err,db)=> {
 
     assert.equal(null,err);
     console.log("Sucessfully connected to the mongodb client");
     // sending the information
- db.collection('Booked_Appointment').find({}).toArray((err,result)=>{ //'Time-Stamp': req.params.Time_Stamp
+ db.collection('Booked_Appointment').findOne({'Time-Stamp': req.body.Time_Stamp},(err,result)=>{ //'Time-Stamp': req.params.Time_Stamp
 
 if(result == null)
   {
     res.json({"code": 404,"message":"No appointment at this point in time"})
   }
   res.json({"code": 200,result});
-});
+  });
 });
 });
 
@@ -104,12 +104,20 @@ setTimeout(pause, 1000);
 });
 
 // image download to be displayed on the pass
-router.get('/download/:Time_Stamp',(req,res,next) =>{
+router.post('/download',(req,res,next) =>{
+var nPromise = new Promise(function(resolve,err){
+
 
 var Grid = require('gridfs-stream');
 var mongoose = require("mongoose");
 Grid.mongo = mongoose.mongo;
 var gfs = new Grid(mongoose.connection.db);
+
+mongoose.connect('mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl_gate_pass_booking');
+  var conn = mongoose.connection;
+  var path = require('path');
+  var fs = require('fs');
+
 
 
 gfs.files.find({ "filename": req.body.Visitors_Name + req.body.Time_stamp}).toArray(function (err, files) { //<------------------check------------]
@@ -140,6 +148,7 @@ gfs.files.find({ "filename": req.body.Visitors_Name + req.body.Time_stamp}).toAr
       res.json({"Status":500,"message":"cannot get the file"});
     });
   });
+});
 });
 
 

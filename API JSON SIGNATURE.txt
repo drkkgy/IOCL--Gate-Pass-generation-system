@@ -3,6 +3,11 @@
 This System is designed to generate gate pass based on the data of the visitors updated in the database 
 
 --------------------------------------->API SIGNATURE<------------------------------------------------
+Server Status Link
+Get Request
+
+URL--> http://127.0.0.1:3000
+
 
 1. Registering an appointment in the system for the visitors
 
@@ -71,6 +76,18 @@ Make a POST REQUEST
 
 URL--> http://127.0.0.1:3000/Visitors_Image_Upload/Visitor_Image_upload
 
+Sample Request
+
+{
+    "Name_of_visitor": "Ankit",
+    "Time_Stamp": "2018/07/06:13:16",
+    "File_Name":"name of the file here"
+    
+}
+
+
+Sample Response
+
 -------------------------------------------------------------------------------------------------------------
 4.Gate Pass Generation System
 ******************************
@@ -78,9 +95,33 @@ URL--> http://127.0.0.1:3000/Visitors_Image_Upload/Visitor_Image_upload
 
 Fetching the information of the appointment to generate the gate pass
 
-Fire a GET Request
+Fire a POST Request
 
-URL--> http://127.0.0.1:3000/Visitors_Gate_Pass_Generation/Gate_Pass_Generation_Engine/?Time_Stamp=2018/06/06:12:19
+URL--> http://127.0.0.1:3000/Visitors_Gate_Pass_Generation/Gate_Pass_Generation_Engine
+
+Sample Post Request
+{
+"Time_Stamp": "2018/06/06:47:23"
+}
+
+Sample Response
+
+{
+    "code": 200,
+    "result": {
+        "_id": "5b17dee3b5f22a1bb30c4aae",
+        "Name_of_visitor": "Ankit3",
+        "Name_of_the_Host": "Raj3",
+        "Visitors_company": "xyz Pvt ltd3",
+        "Age": 25,
+        "Visitors_Designation": "ZCEO",
+        "Visitors_Address": "xyz colony sector 44 noida UP 201301",
+        "Purpose_Of_Visit": "sales discussion7",
+        "Time-Stamp": "2018/06/06:47:23",
+        "Attended_Status?": true
+    }
+}
+
 ******************************
 4.2
 
@@ -94,11 +135,35 @@ Sample Post Request
 {
 "Time_Stamp": "2018/07/06:13:16"
 }
+
+Sample response 
+----for successful updation-----
+{
+    "status": 200,
+    "message": "Appointment marked successfully"
+}
+----for non existing record-----
+{
+    "status": 404,
+    "message": "Appointment not found"
+}
 ******************************
 4.3
 
 Image download for the Gate Pass
 
+Use Post Request
 
-URL--> http://127.0.0.1:3000/Visitors_Gate_Pass_Generation/download/:Time_Stamp
+
+URL--> http://127.0.0.1:3000/Visitors_Gate_Pass_Generation/download
+
+Sample request
+{
+
+"Name_of_visitor": "Ankit2",
+"Time_Stamp": "2018/06/06:47:23"
+
+}
+
+Sample Response 
 
