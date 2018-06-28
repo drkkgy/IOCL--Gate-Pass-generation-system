@@ -1,0 +1,22 @@
+.container {
+  margin-top: 30px;
+  border-color:  orange;
+  border: 5px solid orange;
+
+}
+
+input.ng-invalid.ng-touched {
+  border: 2px solid red;
+}
+
+.check
+{
+  background-color: red;
+  color: azure;
+}
+
+
+.help-block{
+  background-color: red;
+  color: azure;
+}

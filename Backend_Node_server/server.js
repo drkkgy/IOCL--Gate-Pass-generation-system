@@ -3,14 +3,32 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var port = 3000;
 var MongoClient = require('mongodb').MongoClient,assert = require('assert');
+var cors = require('cors');
 
 // Connecting to the mongodb Database
+
+
 
 // Express setup
 
 var app = express();
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(bodyParser.json());
+
+//Solving the CORS issue
+
+var originsWhitelist = [
+    'http://localhost:4200'     //this is my front-end url for development
+];
+var corsOptions = {
+    origin: function(origin, callback){
+        var isWhitelisted = originsWhitelist.indexOf(origin) !== -1;
+        callback(null, isWhitelisted);
+    },
+    credentials:true
+}
+
+app.use(cors(corsOptions));
 
 //Setting server to accept cross-origin browser request
 

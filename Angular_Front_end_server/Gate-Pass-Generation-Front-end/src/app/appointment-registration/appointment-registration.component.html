@@ -1,0 +1,113 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <!-- <form (ngSubmit)="onSubmit(f)" #f="ngForm">-->
+      <form (ngSubmit)="onSubmit()" #f="ngForm">
+        <div id="user-data"
+             ngModelGroup="userData"
+             #userData = "ngModelGroup">
+          <div class="form-group">
+            <label for="Name_of_visitor">NAME OF THR VISITOR</label>
+            <input
+              type="text"
+              id="Name_of_visitor"
+              class="form-control"
+              ngModel
+              name="Name_of_visitor"
+              required>
+          </div>
+
+          <div class="form-group">
+            <label for="Name_of_the_Host">NAME OF THE HOST</label>
+            <input
+              type="text"
+              id="Name_of_the_Host"
+              class="form-control"
+              ngModel
+              name="Name_of_the_Host"
+              required
+              #Name_of_the_Host="ngModel">
+          </div>
+
+          <div class="form-group">
+            <label for="Visitors_company">VISITORS COMPANY</label>
+            <input
+              type="text"
+              id="Visitors_company"
+              class="form-control"
+              ngModel
+              name="Visitors_company"
+              required
+              #Visitors_company="ngModel">
+          </div>
+
+          <div class="form-group">
+            <label for="Age">AGE</label>
+            <input
+              type="number"
+              id="Age"
+              class="form-control"
+              ngModel
+              name="Age"
+              required
+              #Age="ngModel">
+          </div>
+          <span class="help-block" *ngIf="!(Age.value <110) && Age.touched"><strong>Please Enter a Valid Email</strong>></span>
+
+
+          <div class="form-group">
+            <label for="Visitors_Designation">VISITORS DESIGNATION</label>
+            <input
+              type="text"
+              id="Visitors_Designation"
+              class="form-control"
+              ngModel
+              name="Visitors_Designation"
+              required
+              #Name_of_the_Host="ngModel">
+          </div>
+
+          <div class="form-group">
+            <label for="Visitors_Address">VISITORS ADDRESS</label>
+            <input
+              type="text"
+              id="Visitors_Address"
+              class="form-control"
+              ngModel
+              name="Visitors_Address"
+              required
+              #Name_of_the_Host="ngModel">
+          </div>
+
+          <div class="form-group">
+            <label for="Purpose_Of_Visit">PURPOSE OF VISIT</label>
+            <input
+              type="text"
+              id="Purpose_Of_Visit"
+              class="form-control"
+              ngModel
+              name="Purpose_Of_Visit"
+              required
+              #Purpose_Of_Visit="ngModel">
+          </div>
+        </div>
+        <p class="check" *ngIf="!userData.valid && userData.touched">Invalid User Data</p>
+        <button
+          class="btn btn-primary"
+          type="submit" (click)="onSave()"
+          [disabled]="!f.valid">Submit</button>
+      </form>
+    </div>
+  </div>
+  <hr>
+  <div class="row" *ngIf="submitted">
+    <div class="col-xs-12">
+      <h3>Your Data</h3>
+      <p>Username:{{user.Name_of_visitor}}</p>
+      <p>Mail: {{user.Name_of_the_Host}}</p>
+      <p>Secret Question: {{user.Visitors_company}}</p>
+      <p>Answer: {{user.Age}} </p>
+      <p>Gender: {{user.Visitors_Designation}}</p>
+    </div>
+  </div>
+</div>
