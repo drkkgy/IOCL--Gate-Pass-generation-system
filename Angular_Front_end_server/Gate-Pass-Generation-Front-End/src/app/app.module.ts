@@ -5,8 +5,8 @@ import { AppointmentRegistrationComponent } from './appointment-registration/app
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {ServerService} from './appointment-registration/server.service';
-import {BrowserXhr} from '@angular/http';
-import {CustExtBrowserXhr} from './ust-ext-browser-xhr';
+// import {BrowserXhr} from '@angular/http';
+// import {CustExtBrowserXhr} from './ust-ext-browser-xhr';
 // loading the no cors file
 
 @NgModule({
@@ -20,7 +20,7 @@ import {CustExtBrowserXhr} from './ust-ext-browser-xhr';
     HttpModule
   ],
   providers: [ServerService,
-    {provide: BrowserXhr, useClass: CustExtBrowserXhr },
+    // {provide: BrowserXhr, useClass: CustExtBrowserXhr },
     ],
   bootstrap: [AppComponent]
 })

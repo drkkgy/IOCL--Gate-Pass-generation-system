@@ -24,8 +24,7 @@ export class AppointmentRegistrationComponent {
     Purpose_Of_Visit: ''
   };
 
-  servers = [
-    {
+  servers = {
       Name_of_visitor: this.user.Name_of_visitor,
       Name_of_the_Host: this.user.Name_of_the_Host,
       Visitors_company: this.user.Visitors_company,
@@ -34,17 +33,17 @@ export class AppointmentRegistrationComponent {
       Visitors_Address: this.user.Visitors_Address,
       Purpose_Of_Visit: this.user.Purpose_Of_Visit
 
-    }
-  ];
+    };
 
   submitted = false;
 
   onSave() {
-    this.serverService.storeServers(this.servers)
+    this.serverService.storeServers(this.user)
       .subscribe(
         (response) => console.log(response),
         (error) => console.log(error)
       );
+    console.log(this.servers);
   }
 
 
@@ -64,6 +63,12 @@ export class AppointmentRegistrationComponent {
     this.user.Visitors_Designation = this.signupForm.value.userData.Visitors_Designation;
     this.user.Visitors_Address = this.signupForm.value.userData.Visitors_Address;
     this.user.Purpose_Of_Visit = this.signupForm.value.userData.Purpose_Of_Visit;
+
+    this.serverService.storeServers(this.user)
+      .subscribe(
+        (response) => console.log(response),
+        (error) => console.log(error)
+      );
   }
 }
 

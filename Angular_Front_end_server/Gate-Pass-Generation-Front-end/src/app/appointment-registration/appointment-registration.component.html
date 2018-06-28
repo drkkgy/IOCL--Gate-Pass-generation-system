@@ -94,7 +94,7 @@
         <p class="check" *ngIf="!userData.valid && userData.touched">Invalid User Data</p>
         <button
           class="btn btn-primary"
-          type="submit" (click)="onSave()"
+          type="submit"
           [disabled]="!f.valid">Submit</button>
       </form>
     </div>
