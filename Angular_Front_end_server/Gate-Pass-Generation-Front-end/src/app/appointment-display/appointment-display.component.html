@@ -1,11 +1,11 @@
 <div class="container">
   <div class="container-fluid  align-content-lg-around">
-      <label for="Name_of_visitor">Search Appointment</label>
+    <label for="Name_of_visitor"><strong>Search Appointment By Date</strong></label>
       <input type="text"
              id = "Name_of_visitor"
              class="form-control"
              (input)="onUpdateServerName($event)">
-    <button type="button" class="btn btn-primary"> <strong>Search
+    <button type="button" class="btn btn-primary" (click)="onSearch()"> <strong>Search
     </strong>
     </button>
     <button type="button" class="btn btn-primary" (click)="onGet()"><strong>Display All (Active)
@@ -16,6 +16,7 @@
   <div *ngIf="submitted1">
     <p class="alert" *ngIf="status_check1; else failed">Data Fetched Sucessfully</p>
     <ng-template #failed> <p class="alert-">Error in Fetching Data</p> </ng-template>
+    <p class="alert-" *ngIf="status_check2">No Record Found</p>
   </div>
     <div  class="container-fluid" *ngIf="condition">
     <button class="btn-block"   *ngFor = "let server of servers">

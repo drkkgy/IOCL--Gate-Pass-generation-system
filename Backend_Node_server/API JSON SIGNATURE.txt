@@ -70,11 +70,43 @@ JSON RESPONSE FORMAT
             "Visitors_Designation": "XCEO",
             "Visitors_Address": "xyz colony sector 54 noida UP 201301",
             "Purpose_Of_Visit": "sales discussion2",
+            "Time": "2018/06/06",
             "Time-Stamp": "2018/06/06:13:16",
             "Attended_Status?": true
         }
     ]
 }
+
+*****************************
+2.1 For Searching Records
+Fire a POST Request
+
+URL--> http://127.0.0.1:3000/Visitors_List_Display/Search_appointment
+
+Sample Post Request
+{
+"Tim": "2018/06/06"
+}
+
+Sample Response
+
+{
+    "code": 200,
+    "result": {
+        "_id": "5b17dee3b5f22a1bb30c4aae",
+        "Name_of_visitor": "Ankit3",
+        "Name_of_the_Host": "Raj3",
+        "Visitors_company": "xyz Pvt ltd3",
+        "Age": 25,
+        "Visitors_Designation": "ZCEO",
+        "Visitors_Address": "xyz colony sector 44 noida UP 201301",
+        "Purpose_Of_Visit": "sales discussion7",
+        "Time": "2018/06/06"
+        "Time-Stamp": "2018/06/06:47:23",
+        "Attended_Status?": true
+    }
+}
+
 -------------------------------------------------------------------------------------------------------------
 3. User Image Uploading Endpoint
 
@@ -123,6 +155,7 @@ Sample Response
         "Visitors_Designation": "ZCEO",
         "Visitors_Address": "xyz colony sector 44 noida UP 201301",
         "Purpose_Of_Visit": "sales discussion7",
+        "Time": "2018/06/06",
         "Time-Stamp": "2018/06/06:47:23",
         "Attended_Status?": true
     }
