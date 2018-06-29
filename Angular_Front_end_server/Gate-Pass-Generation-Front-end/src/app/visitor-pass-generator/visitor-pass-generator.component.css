@@ -1,0 +1,23 @@
+.c1{
+  background: wheat;
+}
+h1{
+  color: navy;
+  padding: auto;
+}
+h2{
+  color: navy;
+}
+
+h3{
+  color: navy;
+  width: fit-content;
+  float: right;
+}
+.modal-header{
+  float: right;
+  width: max-content;
+  background: orange;
+  backface-visibility: visible;
+}
+

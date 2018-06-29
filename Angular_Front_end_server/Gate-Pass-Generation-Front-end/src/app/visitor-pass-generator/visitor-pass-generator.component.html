@@ -1,0 +1,32 @@
+<div class="container c3">
+  <h1 class="align-content-lg-around" >VISITORS PASS </h1>
+  <p class="alert-heading"><b>Preview</b></p>
+  <hr>
+  <h2 class="align-content-center"> VISITORS DETAILS</h2>
+</div>
+
+<div class="container c1" id="print-section">
+  <hr>
+  <img class= "img-fluid" alt="User Pic" src="../assets/visitor_dummy.png" width="150" height="150">
+  <h1 class="modal-header">VISITORS PASS</h1>
+  <hr>
+  <p class="align-items-lg-center" >Visitors Name         :{{VisitorName}}</p>
+  <p class="align-items-lg-center" >Host Name             :{{HostName}}</p>
+  <p class="align-items-lg-center" >Visitors Company      :{{VisitorsCompany}}</p>
+  <p class="align-items-lg-center" >Visitors Age          :{{VisitorsAge}}</p>
+  <p class="align-items-lg-center" >Visitors Designation  :{{VisitorsDesignation}}</p>
+  <p class="align-items-lg-center" >Visitors Address      :{{VisitorsAddress}}</p>
+  <p class="align-items-lg-center" >Purpose Of Visit      :{{PurposeOfVisit}}</p>
+  <p class="align-items-lg-center" >Time Of Generation    :{{TimeOfGeneration}}</p>
+  <hr>
+  <img class= "img-fluid img2" alt="User Pic" src="../assets/logo.png" width="50" height="50">
+  <h3>VISITORS PASS GENERATED ON {{TimeOfGeneration}}</h3>
+  <hr>
+</div>
+
+<div class="container c2">
+  <button type="button" class="btn btn-primary">GENERATE</button>
+  <hr>
+  <button type="button" class="btn btn-primary"  (click)="print()">PRINT</button>
+
+</div>

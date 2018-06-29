@@ -7,6 +7,7 @@ import {HttpModule} from '@angular/http';
 import {ServerService} from './appointment-registration/server.service';
 import { AppointmentDisplayComponent } from './appointment-display/appointment-display.component';
 import {ServerServiceAppointmentDisplay} from './appointment-display/server.service.appointment.display';
+import {VisitorPassGeneratorComponent} from './visitor-pass-generator/visitor-pass-generator.component';
 // import {BrowserXhr} from '@angular/http';
 // import {CustExtBrowserXhr} from './ust-ext-browser-xhr';
 // loading the no cors file
@@ -15,7 +16,8 @@ import {ServerServiceAppointmentDisplay} from './appointment-display/server.serv
   declarations: [
     AppComponent,
     AppointmentRegistrationComponent,
-    AppointmentDisplayComponent
+    AppointmentDisplayComponent,
+    VisitorPassGeneratorComponent
   ],
   imports: [
     BrowserModule,
