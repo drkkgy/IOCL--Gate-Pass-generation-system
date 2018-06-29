@@ -33,7 +33,7 @@ router.post('/uploading_request',(req,res,next)=> {
                     "Visitors_Address": req.body.Visitors_Address,
                     "Purpose_Of_Visit": req.body.Purpose_Of_Visit,
                     "Time": timestamp('YYYY/MM/DD'),
-                    "Time-Stamp": timestamp('YYYY/MM/DD:mm:ss'),
+                    "Time_Stamp": timestamp('YYYY/MM/DD:mm:ss'),
                     "Attended_Status?": true
 
                 })

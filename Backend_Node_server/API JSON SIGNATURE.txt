@@ -58,7 +58,7 @@ JSON RESPONSE FORMAT
             "Visitors_Address": "xyz colony sector 54 noida UP 201301",
             "Purpose_Of_Visit": "sales discussion",
             "Time":"2018/06/06",
-            "Time-Stamp": "2018/06/06:12:19",
+            "Time_Stamp": "2018/06/06:12:19",
             "Attended_Status?": true
         },
         {
@@ -71,7 +71,7 @@ JSON RESPONSE FORMAT
             "Visitors_Address": "xyz colony sector 54 noida UP 201301",
             "Purpose_Of_Visit": "sales discussion2",
             "Time": "2018/06/06",
-            "Time-Stamp": "2018/06/06:13:16",
+            "Time_Stamp": "2018/06/06:13:16",
             "Attended_Status?": true
         }
     ]
@@ -102,7 +102,7 @@ Sample Response
         "Visitors_Address": "xyz colony sector 44 noida UP 201301",
         "Purpose_Of_Visit": "sales discussion7",
         "Time": "2018/06/06"
-        "Time-Stamp": "2018/06/06:47:23",
+        "Time_Stamp": "2018/06/06:47:23",
         "Attended_Status?": true
     }
 }
@@ -156,7 +156,7 @@ Sample Response
         "Visitors_Address": "xyz colony sector 44 noida UP 201301",
         "Purpose_Of_Visit": "sales discussion7",
         "Time": "2018/06/06",
-        "Time-Stamp": "2018/06/06:47:23",
+        "Time_Stamp": "2018/06/06:47:23",
         "Attended_Status?": true
     }
 }

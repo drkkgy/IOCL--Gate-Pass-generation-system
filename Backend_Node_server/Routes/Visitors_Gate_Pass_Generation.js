@@ -46,7 +46,7 @@ MongoClient.connect('mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl
     assert.equal(null,err);
     console.log("Sucessfully connected to the mongodb client");
     // sending the information
- db.collection('Booked_Appointment').findOne({'Time-Stamp': req.body.Time_Stamp},(err,result)=>{ //'Time-Stamp': req.params.Time_Stamp
+ db.collection('Booked_Appointment').findOne({'Time_Stamp': req.body.Time_Stamp},(err,result)=>{ //'Time_tamp': req.params.Time_Stamp
 
 if(result == null)
   {
@@ -74,7 +74,7 @@ router.post('/Gate_Pass_Generation_Engine/Mark_after_Generation' , (req,res,next
 
     console.log("Sucessfully connected to the mongodb client");
     // sending the information
-  db.collection('Booked_Appointment').findOne({"Time-Stamp": req.body.Time_Stamp}
+  db.collection('Booked_Appointment').findOne({"Time_Stamp": req.body.Time_Stamp}
   
 )
 .then(function(result) {
@@ -99,7 +99,7 @@ MongoClient.connect('mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl
    
     // updating info
     db.collection('Booked_Appointment').update(
-   {'Time-Stamp': req.body.Time_Stamp },
+   {'Time_Stamp': req.body.Time_Stamp },
    {
      $set: {
        'Attended_Status?': false
