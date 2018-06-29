@@ -23,3 +23,11 @@ input.ng-invalid.ng-touched {
   background-color: red;
   color: azure;
 }
+.alert{
+  color: white;
+  background-color: green;
+}
+.alert-{
+  color: white;
+  background-color: red;
+}

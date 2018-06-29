@@ -57,6 +57,7 @@ JSON RESPONSE FORMAT
             "Visitors_Designation": "CEO",
             "Visitors_Address": "xyz colony sector 54 noida UP 201301",
             "Purpose_Of_Visit": "sales discussion",
+            "Time":"2018/06/06",
             "Time-Stamp": "2018/06/06:12:19",
             "Attended_Status?": true
         },

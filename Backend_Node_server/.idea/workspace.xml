@@ -14,22 +14,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="server.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
+            <state relative-caret-position="-82">
               <caret line="36" column="73" selection-start-line="36" selection-start-column="73" selection-end-line="36" selection-end-column="73" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Visitors_Details_Registeration.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Visitors_Details_Registeration.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Routes/Visitors_Details_Registeration.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+            <state relative-caret-position="347">
+              <caret line="40" column="59" lean-forward="true" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="59" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Visitors_Gate_Pass_Generation.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Routes/Visitors_Gate_Pass_Generation.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2460">
+              <caret line="164" lean-forward="true" selection-start-line="164" selection-end-line="164" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Visitors_List_Display.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Routes/Visitors_List_Display.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="406">
+              <caret line="38" column="23" lean-forward="true" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Visitors_Image_Upload.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Routes/Visitors_Image_Upload.js">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -38,6 +61,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/Routes/Visitors_Gate_Pass_Generation.js" />
+        <option value="$PROJECT_DIR$/Routes/Visitors_List_Display.js" />
+        <option value="$PROJECT_DIR$/Routes/Visitors_Details_Registeration.js" />
       </list>
     </option>
   </component>
@@ -58,9 +84,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="1">
-    <option name="x" value="56" />
-    <option name="y" value="173" />
-    <option name="width" value="1025" />
+    <option name="x" value="485" />
+    <option name="y" value="83" />
+    <option name="width" value="1244" />
     <option name="height" value="825" />
   </component>
   <component name="ProjectView">
@@ -68,7 +94,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -85,6 +110,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -117,23 +143,24 @@
       <updated>1530192359962</updated>
       <workItem from="1530192361284" duration="1009000" />
       <workItem from="1530194756953" duration="1497000" />
+      <workItem from="1530247505545" duration="5980000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2506000" />
+    <option name="totallyTimeSpent" value="8486000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="56" y="173" width="1025" height="825" extended-state="1" />
+    <frame x="485" y="83" width="1244" height="825" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4970297" visible="true" weight="0.2497561" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.83168316" visible="true" weight="0.20578778" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" id="npm" order="2" sideWeight="0.5029703" side_tool="true" visible="true" weight="0.2497561" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info id="npm" order="2" sideWeight="0.16831683" side_tool="true" visible="true" weight="0.20578778" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32756326" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -142,9 +169,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +181,20 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="73" selection-start-line="36" selection-start-column="73" selection-end-line="36" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Routes/Visitors_Details_Registeration.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -168,17 +209,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Routes/Visitors_Details_Registeration.js">
+    <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="40" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
+        <state relative-caret-position="-82">
+          <caret line="36" column="73" selection-start-line="36" selection-start-column="73" selection-end-line="36" selection-end-column="73" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
+    <entry file="file://$PROJECT_DIR$/Routes/Visitors_Image_Upload.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Routes/Visitors_List_Display.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="36" column="73" selection-start-line="36" selection-start-column="73" selection-end-line="36" selection-end-column="73" />
+        <state relative-caret-position="406">
+          <caret line="38" column="23" lean-forward="true" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Routes/Visitors_Gate_Pass_Generation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2460">
+          <caret line="164" lean-forward="true" selection-start-line="164" selection-end-line="164" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Routes/Visitors_Details_Registeration.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="40" column="59" lean-forward="true" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="59" />
         </state>
       </provider>
     </entry>

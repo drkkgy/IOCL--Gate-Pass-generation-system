@@ -1,0 +1,26 @@
+.card{
+  color: navy;
+  background: orange;
+  border-style: outset double ;
+}
+.btn-block{
+  background: navy;
+}
+
+.btn
+{
+  color: navy;
+  background: orange;
+}
+.container{
+background-color: wheat;
+}
+
+.alert{
+  color: white;
+  background-color: green;
+}
+.alert-{
+  color: white;
+  background-color: red;
+}

@@ -1,6 +1,7 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {ServerService} from './server.service';
+import {stringify} from 'querystring';
 
 @Component({
   selector: 'app-appointmentregistrationcomponent',
@@ -9,9 +10,9 @@ import {ServerService} from './server.service';
 })
 export class AppointmentRegistrationComponent {
   constructor(private serverService: ServerService) {}
-  default_queation = 'pet';
-  genders = ['male', 'female'];
   answer = '';
+  status_check = false;
+  message_from_server = '';
   @ViewChild('f') signupForm: NgForm;
 
   user = {
@@ -66,7 +67,13 @@ export class AppointmentRegistrationComponent {
 
     this.serverService.storeServers(this.user)
       .subscribe(
-        (response) => console.log(response),
+        (response) => { this.message_from_server = response.json().message
+        if ( this.message_from_server === 'Visitors details registered successfully')
+        {
+          this.status_check = true
+        }
+
+        },
         (error) => console.log(error)
       );
   }

@@ -14,7 +14,12 @@ router.get('/Visitors_Appointment_Display', (req,res,next)=>{
 
 MongoClient.connect('mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl_gate_pass_booking', (err,db)=> {
 
-    assert.equal(null,err);
+    try {
+        assert.equal(null,err);
+    }catch (e) {
+        res.json({"status":"404","message": "Error Acessing databases try after some time"});
+    }
+
     console.log("Sucessfully connected to the mongodb client");
     // sending the information
  db.collection('Booked_Appointment').find({'Attended_Status?': true}).toArray((err,result)=>{
@@ -25,8 +30,8 @@ if(result == null)
   }
   res.json({"code": 200,result});
 });
+// Catch block to detect any error and prevent the system from crashing
 
-    
 });
 
 });
