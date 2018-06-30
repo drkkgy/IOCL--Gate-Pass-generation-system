@@ -10,7 +10,7 @@ h2{
   color: navy;
 }
 
-h3{
+h6{
   color: navy;
   width: fit-content;
   float: right;
@@ -22,3 +22,17 @@ h3{
   backface-visibility: visible;
 }
 
+.t1{
+  background: red;
+  color: white;
+  border-style: solid;
+}
+.t2{
+  background: green;
+  color: white;
+  border-style: solid;
+}
+.b\*{
+
+float: right;
+}

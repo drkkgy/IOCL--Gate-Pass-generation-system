@@ -1,6 +1,7 @@
 <div class="container c3">
   <h1 class="align-content-lg-around" >VISITORS PASS </h1>
-  <p class="alert-heading"><b>Preview</b></p>
+  <p class="alert-heading t1" *ngIf="!isGenerated; else generated"><b>Preview</b></p>
+  <ng-template class="alert-heading t2" #generated><p class="alert-heading t2">Visitors Pass Generated Sucessfully</p></ng-template>
   <hr>
   <h2 class="align-content-center"> VISITORS DETAILS</h2>
 </div>
@@ -20,13 +21,16 @@
   <p class="align-items-lg-center" >Time Of Generation    :{{TimeOfGeneration}}</p>
   <hr>
   <img class= "img-fluid img2" alt="User Pic" src="../assets/logo.png" width="50" height="50">
-  <h3>VISITORS PASS GENERATED ON {{TimeOfGeneration}}</h3>
+  <h6>VISITORS PASS GENERATED ON {{get_current_date[0] + '/' + get_current_date[1]
+    + '/' + get_current_date[2] + '/' + get_current_date[3] + ':' + get_current_date[4]
+    + ':' + get_current_date[5]}}</h6>
   <hr>
 </div>
 
 <div class="container c2">
-  <button type="button" class="btn btn-primary">GENERATE</button>
+  <button type="button" class="btn btn-primary" (click)="Mark_Generated_File()">GENERATE</button>
+  <button type="button" class="btn btn-primary b*">BACK</button>
   <hr>
-  <button type="button" class="btn btn-primary"  (click)="print()">PRINT</button>
+  <button type="button" class="btn btn-primary" [disabled]="!isGenerated" (click)="print()">PRINT</button>
 
 </div>

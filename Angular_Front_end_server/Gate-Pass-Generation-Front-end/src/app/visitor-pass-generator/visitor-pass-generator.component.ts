@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Runtime} from 'inspector';
 import {ServerServicePassGeneration} from './server.service.pass.generation';
-import {error} from 'util';
+import {DatePipe, getLocaleDateTimeFormat} from '@angular/common';
+import {stringify} from 'querystring';
+
 
 @Component({
   selector: 'app-visitor-pass-generator',
@@ -11,6 +12,9 @@ import {error} from 'util';
 export class VisitorPassGeneratorComponent implements OnInit {
   constructor(private serverService: ServerServicePassGeneration) {
   }
+  current_time = new Date();
+  get_current_date = ['00', '00' , '0000' , '00' , '00' , '00' ];
+  isGenerated = false;
   VisitorName = '  default';
   HostName = '  default';
   VisitorsCompany = '  default';
@@ -62,13 +66,23 @@ export class VisitorPassGeneratorComponent implements OnInit {
   }
 
   Mark_Generated_File() {
+    this.isGenerated = true;
+    // --------Generating Time Stamp---------------------------
+    this.get_current_date[0] = this.current_time.getDate().toString();
+    this.get_current_date[1] = this.current_time.getMonth().toString();
+    this.get_current_date[2] = this.current_time.getFullYear().toString();
+    this.get_current_date[3] = this.current_time.getHours().toString();
+    this.get_current_date[4] = this.current_time.getMinutes().toString();
+    this.get_current_date[5] = this.current_time.getSeconds().toString();
+    // ---------------------------------------------------------
     this.serverService.Mark_Generation_True(this.timeDict)
       .subscribe(
         (response) => console.log(response),
         (error) => console.log(error)
       );
   }
-  Fetch_time_stamp(time){
+  Fetch_time_stamp(time) {
     this.timeDict = {'Time_Stamp': time};
  }
+
 }
