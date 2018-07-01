@@ -54,7 +54,9 @@ app.use('/Visitors_List_Display',require('./Routes/Visitors_List_Display'));
 
 app.use('/Visitors_Image_Upload',require('./Routes/Visitors_Image_Upload'));
 
-app.use('/Visitors_Gate_Pass_Generation' , require('./Routes/Visitors_Gate_Pass_Generation'))
+app.use('/Visitors_Gate_Pass_Generation' , require('./Routes/Visitors_Gate_Pass_Generation'));
+
+app.use('/Login' , require('./Routes/Login'));
 
 // null response 
 

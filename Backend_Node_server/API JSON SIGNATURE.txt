@@ -237,3 +237,64 @@ Sample request
 
 Sample Response 
 
+--------------------------------------------------------------------------------------
+5. Basic Login System
+*********************************************
+5.1
+
+Register User For the System
+
+Use Post Request
+
+URL-->http://127.0.0.1:3000/Login/crete_account
+
+Sample Request 
+
+{
+    "Name_Of_Employee": "Rajesh Singh",
+    "Username": "ankit123",
+    "Password": "12345",
+    "Reception": "True"
+}
+
+Response
+
+{
+    "status": "200",
+    "message": "User Registration successfully"
+}
+
+{
+    "status": "404",
+    "message": "Server Access Failed"
+}
+**************************************************
+5.2
+
+Login Check System
+
+Use Post Request
+
+URL-->http://127.0.0.1:3000/Login/crete_account/Login_Check
+
+Sample Request
+
+{
+    "Username": "ankit123",
+    "Password": "12345"
+}
+
+
+Responses 
+****** Incorrect Pass ************
+{
+    "code": 400
+}
+
+******** Correct Pass *************
+{
+    "code": 200,
+    "Reception": "True"
+}
+
+
