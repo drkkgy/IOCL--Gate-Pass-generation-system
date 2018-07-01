@@ -1,4 +1,4 @@
-.c1{
+:host ::ng-deep .c1{
   background: wheat;
   color: #020380;
 }
@@ -35,4 +35,8 @@ h6{
 .b\*{
 
 float: right;
+}
+
+.tc{
+  color: white;
 }

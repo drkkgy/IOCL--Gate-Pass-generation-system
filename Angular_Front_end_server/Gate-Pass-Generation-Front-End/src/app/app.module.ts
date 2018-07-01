@@ -9,23 +9,33 @@ import { AppointmentDisplayComponent } from './appointment-display/appointment-d
 import {ServerServiceAppointmentDisplay} from './appointment-display/server.service.appointment.display';
 import {VisitorPassGeneratorComponent} from './visitor-pass-generator/visitor-pass-generator.component';
 import {ServerServicePassGeneration} from './visitor-pass-generator/server.service.pass.generation';
+import {RouterModule, Routes} from '@angular/router';
+import { LoginModuleComponent } from './login-module/login-module.component';
+import {Mainservice} from './mainservice';
 // import {BrowserXhr} from '@angular/http';
 // import {CustExtBrowserXhr} from './ust-ext-browser-xhr';
 // loading the no cors file
-
+const appRoutes: Routes = [
+  {path: '' , component: LoginModuleComponent },
+  {path: 'appointment-display', component: AppointmentDisplayComponent},
+  {path: 'appointment-registration', component: AppointmentRegistrationComponent},
+  {path: 'visitor-pass-generation', component: VisitorPassGeneratorComponent}
+];
 @NgModule({
   declarations: [
     AppComponent,
     AppointmentRegistrationComponent,
     AppointmentDisplayComponent,
-    VisitorPassGeneratorComponent
+    VisitorPassGeneratorComponent,
+    LoginModuleComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [ServerService, ServerServiceAppointmentDisplay, ServerServicePassGeneration
+  providers: [ServerService, ServerServiceAppointmentDisplay, ServerServicePassGeneration , Mainservice
     // {provide: BrowserXhr, useClass: CustExtBrowserXhr },
     ],
   bootstrap: [AppComponent]

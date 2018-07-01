@@ -59,6 +59,7 @@ JSON RESPONSE FORMAT
             "Purpose_Of_Visit": "sales discussion",
             "Time":"2018/06/06",
             "Time_Stamp": "2018/06/06:12:19",
+            "Pass_Generated_On": "Not Generated Yet",
             "Attended_Status?": true
         },
         {
@@ -72,6 +73,7 @@ JSON RESPONSE FORMAT
             "Purpose_Of_Visit": "sales discussion2",
             "Time": "2018/06/06",
             "Time_Stamp": "2018/06/06:13:16",
+            "Pass_Generated_On": "Not Generated Yet",
             "Attended_Status?": true
         }
     ]
@@ -103,10 +105,37 @@ Sample Response
         "Purpose_Of_Visit": "sales discussion7",
         "Time": "2018/06/06"
         "Time_Stamp": "2018/06/06:47:23",
+        "Pass_Generated_On": "Not Generated Yet",
         "Attended_Status?": true
     }
 }
 
+2.2 Generating the List of records that have been already generated
+
+Fire a GET Request
+URL-->http://127.0.0.1:3000/Visitors_List_Display/Visitors_Appointment_Display/generated
+
+JSON Response Format
+
+{
+    "code": 200,
+    "result": [
+        {
+            "_id": "5b35fd6be93fbf2cde97f297",
+            "Name_of_visitor": "Ankit Yadav",
+            "Name_of_the_Host": "Ankit Yadav",
+            "Visitors_company": "xyz123",
+            "Age": 54,
+            "Visitors_Designation": "ankit 123 secor",
+            "Visitors_Address": "A-6, SEC- 56, NOIDA",
+            "Purpose_Of_Visit": "Marketing Deal",
+            "Time": "2018/06/29",
+            "Time_Stamp": "2018/06/29:05:39",
+            "Pass_Generated_On": "1/6/2018/17:49:25",
+            "Attended_Status?": false
+        }
+    ]
+}
 -------------------------------------------------------------------------------------------------------------
 3. User Image Uploading Endpoint
 
@@ -157,6 +186,7 @@ Sample Response
         "Purpose_Of_Visit": "sales discussion7",
         "Time": "2018/06/06",
         "Time_Stamp": "2018/06/06:47:23",
+        "Pass_Generated_On": "Not Generated Yet",
         "Attended_Status?": true
     }
 }
@@ -172,7 +202,8 @@ URL--> http://127.0.0.1:3000/Visitors_Gate_Pass_Generation/Gate_Pass_Generation_
 
 Sample Post Request
 {
-"Time_Stamp": "2018/07/06:13:16"
+"Time_Stamp": "2018/07/06:13:16",
+"Pass_Generated_On":2018/07/08:13:16
 }
 
 Sample response 

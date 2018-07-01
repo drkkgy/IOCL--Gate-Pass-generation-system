@@ -11,6 +11,9 @@
     <button type="button" class="btn btn-primary" (click)="onGet()"><strong>Display All (Active)
     </strong>
     </button>
+    <button type="button" class="btn btn-primary" (click)="onGetGen()"><strong>Display Generated Appointments
+    </strong>
+    </button>
        <hr>
     </div>
   <div *ngIf="submitted1">
@@ -18,9 +21,10 @@
     <ng-template #failed> <p class="alert-">Error in Fetching Data</p> </ng-template>
     <p class="alert-" *ngIf="status_check2">No Record Found</p>
   </div>
-    <div  class="container-fluid" *ngIf="condition">
-    <button class="btn-block"   *ngFor = "let server of servers">
-      <span class="card">{{server}}</span>
+    <div  class="container-fluid" >
+    <button class="btn-block" *ngFor = "let server of servers " (click)="Fetch_time_stamp(server); Fetch_Pass_Data()">
+      <span class="card" *ngIf="condition">{{server.substring(0,51)}}</span>
+      <span class="card"*ngIf="!condition">{{server}}</span>
     </button>
   </div>
 </div>

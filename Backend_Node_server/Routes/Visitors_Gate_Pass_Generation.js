@@ -43,17 +43,27 @@ router.post('/Gate_Pass_Generation_Engine', (req,res,next)=>{
 // fetching details
 MongoClient.connect('mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl_gate_pass_booking', (err,db)=> {
 
-    assert.equal(null,err);
+    try {
+        assert.equal(null,err);
+
+    }catch (e) {
+       return res.json({"code": 404,"message":"No appointment at this point in time"});
+      }
+
     console.log("Sucessfully connected to the mongodb client");
     // sending the information
  db.collection('Booked_Appointment').findOne({'Time_Stamp': req.body.Time_Stamp},(err,result)=>{ //'Time_tamp': req.params.Time_Stamp
 
 if(result == null)
   {
-    res.json({"code": 404,"message":"No appointment at this point in time"})
+    return res.json({"code": 404,"message":"No appointment at this point in time"})
   }
-  res.json({"code": 200,result});
+  return res.json({"code": 200,result});
   });
+ if(err)
+ {
+     return res.json({"code": 404,"message":"No appointment at this point in time"});
+ }
 });
 });
 
@@ -69,7 +79,7 @@ router.post('/Gate_Pass_Generation_Engine/Mark_after_Generation' , (req,res,next
         try {
             assert.equal(null,err);
         } catch (e) {
-            res.json({"status":"404","message": "Error Acessing databases try after some time"});
+           return res.json({"status":"404","message": "Error Acessing databases try after some time"});
         }
 
     console.log("Sucessfully connected to the mongodb client");
@@ -81,7 +91,7 @@ router.post('/Gate_Pass_Generation_Engine/Mark_after_Generation' , (req,res,next
 	console.log(result)
   if(result == null)
   {
-  	res.json({"status": 404 , "message": "Apointment not found"});
+  	return res.json({"status": 404 , "message": "Apointment not found"});
   }
   
 }) 
@@ -93,7 +103,7 @@ MongoClient.connect('mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl
         assert.equal(null,err);
 
     } catch (e) {
-        res.json({"status":"404","message": "Error Acessing databases try after some time"});
+        return res.json({"status":"404","message": "Error Acessing databases try after some time"});
     }
     console.log("Sucessfully connected to the mongodb client");
    
@@ -102,16 +112,19 @@ MongoClient.connect('mongodb://ankit:iocl1234567890@ds247290.mlab.com:47290/iocl
    {'Time_Stamp': req.body.Time_Stamp },
    {
      $set: {
-       'Attended_Status?': false
+       'Attended_Status?': false,
+         'Pass_Generated_On': req.body.Pass_Generated_On
      },
    }
    ).then((result1)=>{
-    res.json({"status": 200, "message": "Appointment marked sucessfully"});
+    return res.json({"status": 200, "message": "Appointment marked sucessfully"});
  })
  });
 }
 setTimeout(pause, 1000);
 });
+
+
 
 // image download to be displayed on the pass
 router.post('/download',(req,res,next) =>{
@@ -155,7 +168,7 @@ gfs.files.find({ "filename": req.body.Visitors_Name + req.body.Time_stamp}).toAr
     readstream.on('error', function (err) {
       console.log('An error occurred!', err);
       throw err;
-      res.json({"Status":500,"message":"cannot get the file"});
+       res.json({"Status":500,"message":"cannot get the file"});
     });
   });
 });

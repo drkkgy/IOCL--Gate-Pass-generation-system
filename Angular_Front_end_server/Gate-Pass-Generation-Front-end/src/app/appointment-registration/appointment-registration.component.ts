@@ -67,10 +67,9 @@ export class AppointmentRegistrationComponent {
 
     this.serverService.storeServers(this.user)
       .subscribe(
-        (response) => { this.message_from_server = response.json().message
-        if ( this.message_from_server === 'Visitors details registered successfully')
-        {
-          this.status_check = true
+        (response) => { this.message_from_server = response.json().message;
+        if ( this.message_from_server === 'Visitors details registered successfully') {
+          this.status_check = true;
         }
 
         },
