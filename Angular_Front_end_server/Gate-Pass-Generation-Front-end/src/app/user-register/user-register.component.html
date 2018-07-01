@@ -1,0 +1,67 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()" #f="ngForm">
+  <div class="container-fluid  align-content-lg-around"
+       id="user-data"
+       ngModelGroup="userData"
+       #userData = "ngModelGroup">
+    <div class="form-group">
+    <label for="Name_Of_Employee"><strong>Name Of The Employee</strong></label>
+    <input type="text"
+           id = "Name_Of_Employee"
+           class="form-control"
+           ngModel
+           required
+           name="Name_Of_Employee"
+           >
+    </div>
+    <hr>
+    <div class="form-group">
+    <label for="Username"><strong>Enter Your User Name</strong></label>
+    <input type="text"
+           id = "Username"
+           class="form-control"
+           ngModel
+           required
+           name="Username"
+           >
+    </div>
+    <hr>
+    <div class="form-group">
+    <label for="Password"><strong>Enter Your Password</strong></label>
+    <input type="text"
+           id = "Password"
+           class="form-control"
+           ngModel
+           required
+           name="Password"
+           >
+    </div>
+
+    <hr>
+    <div class="form-group">
+    <label for="Reception"><strong>Reception Employee Role ?</strong></label>
+    <input type="checkbox"
+           id = "Reception"
+           class="form-control"
+           [(ngModel)]="checkBoxValue"
+           name="Reception"
+           (change)="toggle_fun()"
+           >
+    </div>
+    <hr>
+  </div>
+    <p class="check"  *ngIf="!userData.valid && userData.touched">Invalid User Data</p>
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <button  class="btn btn-primary"
+            type="submit"
+            [disabled]="!f.valid">
+      <strong>Register</strong>
+    </button>
+      <button class="btn btn-primary b2" [disabled]="!activate_login" (click)="route_to_login()"><strong>Login Page</strong></button>
+    </div>
+  </form>
+  <div *ngIf="submitted">
+    <p class="alert" *ngIf="status_check; else failed">{{message_from_server}}</p>
+    <ng-template #failed> <p class="alert-">Error in registring the user</p> </ng-template>
+  </div>
+</div>

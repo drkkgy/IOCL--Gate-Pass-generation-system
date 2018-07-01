@@ -44,7 +44,7 @@
       <file leaf-file-name="Login.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Routes/Login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
+            <state relative-caret-position="38">
               <caret line="65" column="57" selection-start-line="65" selection-start-column="57" selection-end-line="65" selection-end-column="57" />
             </state>
           </provider>
@@ -86,7 +86,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="303" />
     <option name="y" value="61" />
     <option name="width" value="1244" />
@@ -147,15 +147,15 @@
       <workItem from="1530192361284" duration="1009000" />
       <workItem from="1530194756953" duration="1497000" />
       <workItem from="1530247505545" duration="10261000" />
-      <workItem from="1530351638956" duration="13101000" />
+      <workItem from="1530351638956" duration="13700000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25868000" />
+    <option name="totallyTimeSpent" value="26467000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="303" y="61" width="1244" height="825" extended-state="0" />
+    <frame x="303" y="61" width="1244" height="825" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.829703" visible="true" weight="0.20578778" />
@@ -277,7 +277,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Routes/Login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="38">
           <caret line="65" column="57" selection-start-line="65" selection-start-column="57" selection-end-line="65" selection-end-column="57" />
         </state>
       </provider>
