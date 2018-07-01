@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {Router} from '@angular/router';
+import {NgForm} from '@angular/forms';
+import {ServerServiceUserRegistration} from '../user-register/server.service.user.registration';
+import {ServerServiceLogin} from './server.service.login';
 
 @Component({
   selector: 'app-login-module',
@@ -7,9 +11,62 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginModuleComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('f') signupForm: NgForm;
+   sucess = false;
+  user = {
+    Username: '',
+    Password: '',
+  };
+  submitted = false;
+  Reception = false;
+
+  constructor(private serverService: ServerServiceLogin , private router: Router ) { }
 
   ngOnInit() {
+  }
+
+  route_to_register() {
+    this.router.navigate(['/register_user']);
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    this.user.Username = this.signupForm.value.userData.Username;
+    this.user.Password = this.signupForm.value.userData.Password;
+    this.serverService.storeServers(this.user)
+      .subscribe(
+        (response) => { console.log(response)
+          setTimeout( () =>{
+          if(response.json().code === '200') {
+            this.sucess = true ;
+            this.Reception = response.json().Reception;
+            /*if(response.json().Reception === 'True'){
+              this.Reception = true ;
+            } else{
+              this.Reception = false ;
+            }*/
+          } else{
+            this.sucess = false ;
+          }
+        }, 3000 )},
+        (error) => console.log(error)
+      );
+     console.log(this.Reception);
+     if(this.sucess) {
+       if (this.Reception) {
+         // this.router.navigate(['/appointment-display']);
+         setTimeout(() => {
+           this.router.navigate(['/appointment-display'])
+         }, 3000);
+
+       } else {
+         // this.router.navigate(['/appointment-registration']);
+         setTimeout(() => {
+           this.router.navigate(['/appointment-registration'])
+         }, 3000);
+
+       }
+      }
   }
 
 }

@@ -1,0 +1,28 @@
+.hb{
+  color: navy;
+}
+.reg{
+  float: right;
+}
+
+.container {
+  margin-top: 30px;
+  border-color:  orange;
+  border: 5px solid orange;
+  background-color: #ffba5a;
+  color: navy;
+
+}
+
+input.ng-invalid.ng-touched {
+  border: 2px solid red;
+}
+
+.alert{
+  color: white;
+  background-color: green;
+}
+.alert-{
+  color: white;
+  background-color: red;
+}

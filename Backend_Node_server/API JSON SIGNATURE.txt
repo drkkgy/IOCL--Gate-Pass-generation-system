@@ -275,7 +275,7 @@ Login Check System
 
 Use Post Request
 
-URL-->http://127.0.0.1:3000/Login/crete_account/Login_Check
+URL-->http://127.0.0.1:3000/Login/Login_Check
 
 Sample Request
 

@@ -14,6 +14,7 @@ import { LoginModuleComponent } from './login-module/login-module.component';
 import {Mainservice} from './mainservice';
 import { UserRegisterComponent } from './user-register/user-register.component';
 import {ServerServiceUserRegistration} from './user-register/server.service.user.registration';
+import {ServerServiceLogin} from './login-module/server.service.login';
 // import {BrowserXhr} from '@angular/http';
 // import {CustExtBrowserXhr} from './ust-ext-browser-xhr';
 // loading the no cors file
@@ -42,7 +43,7 @@ const appRoutes: Routes = [
   ],
   providers: [ServerService, ServerServiceAppointmentDisplay, ServerServicePassGeneration , Mainservice
     // {provide: BrowserXhr, useClass: CustExtBrowserXhr },
-    , ServerServiceUserRegistration],
+    , ServerServiceUserRegistration , ServerServiceLogin],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
