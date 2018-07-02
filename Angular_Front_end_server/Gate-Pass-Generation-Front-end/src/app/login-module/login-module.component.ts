@@ -36,8 +36,7 @@ export class LoginModuleComponent implements OnInit {
     this.serverService.storeServers(this.user)
       .subscribe(
         (response) => { console.log(response)
-          setTimeout( () =>{
-          if(response.json().code === '200') {
+          if(response.json().code === 200) {
             this.sucess = true ;
             this.Reception = response.json().Reception;
             /*if(response.json().Reception === 'True'){
@@ -48,25 +47,20 @@ export class LoginModuleComponent implements OnInit {
           } else{
             this.sucess = false ;
           }
-        }, 3000 )},
+        },
         (error) => console.log(error)
       );
      console.log(this.Reception);
+     setTimeout( () => {
      if(this.sucess) {
        if (this.Reception) {
-         // this.router.navigate(['/appointment-display']);
-         setTimeout(() => {
-           this.router.navigate(['/appointment-display'])
-         }, 3000);
-
-       } else {
-         // this.router.navigate(['/appointment-registration']);
-         setTimeout(() => {
-           this.router.navigate(['/appointment-registration'])
-         }, 3000);
-
+           this.router.navigate(['/appointment-display']);
+         } else{
+         this.router.navigate(['/appointment-registration']);
+         }
+         } else {
+       } } , 4000
+       );
        }
-      }
-  }
 
 }
