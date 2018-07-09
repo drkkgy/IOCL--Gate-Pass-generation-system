@@ -87,7 +87,9 @@ URL--> http://127.0.0.1:3000/Visitors_List_Display/Search_appointment
 
 Sample Post Request
 {
-"Tim": "2018/06/06"
+"Tim": "2018/06/06",
+"Name_of_visitor": "Ankit Yadav",
+"Attended_Status": "true"
 }
 
 Sample Response

@@ -11,6 +11,7 @@ import {Mainservice} from '../mainservice';
 })
 export class AppointmentDisplayComponent implements OnInit {
   status_check2 = false;
+  arr = [];
   submitted1 = false;
   status_check1 = true;
   servers = [];
@@ -60,11 +61,12 @@ export class AppointmentDisplayComponent implements OnInit {
 
   onSearch() {
     this.submitted1 = true;
+    console.log(this.dict)
     this.serverService.searchServer(this.dict)
       .subscribe(
         (response) => {
           console.log(this.servers);
-          console.log(response.json().code)
+          console.log(response.json().result)
           if (response.json().code === 200) {
             this.status_check1 = true;
           } else {
@@ -76,9 +78,19 @@ export class AppointmentDisplayComponent implements OnInit {
             this.status_check2 = false;
           }
           this.servers = [];
-          for (let i in response.json().result) {
-            this.servers.push(response.json().result[i].Name_of_visitor + ' Is Invited by ' + response.json().result[i].Name_of_the_Host
-              + ' on ' + response.json().result[i].Time_Stamp);
+          if (this.dict['Attended_Status']) {
+            this.condition = true;
+            for (let i in response.json().result) {
+              this.servers.push(response.json().result[i].Name_of_visitor + ' Is Invited by ' + response.json().result[i].Name_of_the_Host
+                + ' on ' + response.json().result[i].Time_Stamp);
+            }
+          } else {
+            this.condition = false;
+            for (let i in response.json().result) {
+              this.servers.push('Pass for ' + response.json().result[i].Name_of_visitor
+                + ' Is Invited by ' + response.json().result[i].Name_of_the_Host
+                + ' on ' + response.json().result[i].Time_Stamp + ' Generated on ' + response.json().result[i].Pass_Generated_On);
+            }
           }
         },
         (error) => console.log(error)
@@ -87,7 +99,13 @@ export class AppointmentDisplayComponent implements OnInit {
 
   onUpdateServerName(event: Event) {
     this.searchData = (<HTMLInputElement>event.target).value;
-    this.dict = {'Tim': this.searchData};
+    this.arr = this.searchData.split(',');
+    if(this.arr[2] === 'true') {
+      this.arr[2] = true;
+    } else {
+      this.arr[2] = false;
+    }
+    this.dict = {'Tim': this.arr[0], 'Name_of_visitor': this.arr[1], 'Attended_Status': this.arr[2]};
   }
 
   Fetch_time_stamp(time) {

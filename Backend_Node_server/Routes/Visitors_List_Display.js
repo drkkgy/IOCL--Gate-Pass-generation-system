@@ -74,7 +74,7 @@ router.post('/Search_appointment', (req,res,next)=>{
         }
         console.log("Sucessfully connected to the mongodb client");
         // sending the information
-        db.collection('Booked_Appointment').find({'Time': req.body.Tim}).toArray((err,result)=>{
+        db.collection('Booked_Appointment').find({'Time': req.body.Tim , 'Name_of_visitor': req.body.Name_of_visitor , 'Attended_Status?': req.body.Attended_Status }).toArray((err,result)=>{
             if(result == null)
             {
                 return res.json({"code": 404,"message":"No Records Found"})

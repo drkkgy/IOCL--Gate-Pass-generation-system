@@ -32,11 +32,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Visitors_Gate_Pass_Generation.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Visitors_Gate_Pass_Generation.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Routes/Visitors_Gate_Pass_Generation.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1627">
-              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+            <state relative-caret-position="368">
+              <caret line="180" column="23" lean-forward="true" selection-start-line="180" selection-start-column="23" selection-end-line="180" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Visitors_List_Display.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Routes/Visitors_List_Display.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="394">
+              <caret line="83" column="7" lean-forward="true" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -64,9 +73,9 @@
       <list>
         <option value="$PROJECT_DIR$/Routes/Visitors_Gate_Pass_Generation.js" />
         <option value="$PROJECT_DIR$/Routes/Visitors_Details_Registeration.js" />
-        <option value="$PROJECT_DIR$/Routes/Visitors_List_Display.js" />
         <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/Routes/Login.js" />
+        <option value="$PROJECT_DIR$/Routes/Visitors_List_Display.js" />
       </list>
     </option>
   </component>
@@ -86,7 +95,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="92" />
     <option name="y" value="23" />
     <option name="width" value="1244" />
@@ -147,18 +156,18 @@
       <workItem from="1530192361284" duration="1009000" />
       <workItem from="1530194756953" duration="1497000" />
       <workItem from="1530247505545" duration="10261000" />
-      <workItem from="1530351638956" duration="21531000" />
+      <workItem from="1530351638956" duration="23373000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34298000" />
+    <option name="totallyTimeSpent" value="36140000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="92" y="23" width="1244" height="825" extended-state="0" />
+    <frame x="92" y="23" width="1244" height="825" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.829703" visible="true" weight="0.20578778" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.829703" visible="true" weight="0.20578778" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -166,7 +175,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="npm" order="2" sideWeight="0.17029703" side_tool="true" visible="true" weight="0.20578778" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32756326" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32756326" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -247,13 +256,6 @@
     <entry file="file://$PROJECT_DIR$/Routes/Visitors_Image_Upload.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Routes/Visitors_List_Display.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="43" lean-forward="true" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Routes/Visitors_Details_Registeration.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="383">
@@ -277,8 +279,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Routes/Visitors_Gate_Pass_Generation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1627">
-          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+        <state relative-caret-position="368">
+          <caret line="180" column="23" lean-forward="true" selection-start-line="180" selection-start-column="23" selection-end-line="180" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Routes/Visitors_List_Display.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="83" column="7" lean-forward="true" selection-start-line="83" selection-start-column="7" selection-end-line="83" selection-end-column="7" />
         </state>
       </provider>
     </entry>
