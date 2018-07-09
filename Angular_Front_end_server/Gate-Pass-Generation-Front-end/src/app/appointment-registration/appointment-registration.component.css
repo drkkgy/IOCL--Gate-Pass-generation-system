@@ -31,3 +31,6 @@ input.ng-invalid.ng-touched {
   color: white;
   background-color: red;
 }
+.b2{
+  float: right;
+}

@@ -12,4 +12,9 @@ export class  ServerServiceUserRegistration{
       {headers: headers});
 
   }
+  usernameCheck(servers) {
+    const headers = new Headers({'Content-Type': 'application/json'});
+    return this.http.post('http://127.0.0.1:3000/Login/crete_account/redundency_check', servers,
+      {headers: headers});
+  }
 }

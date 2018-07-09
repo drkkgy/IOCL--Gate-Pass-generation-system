@@ -96,9 +96,10 @@
 
           type="submit"
           [disabled]="!f.valid">Submit</button>
+        <button class="btn btn-primary b2" type="button" (click)="route_to_login()">Log Out</button>
       </form>
       <div *ngIf="submitted">
-      <p class="alert" *ngIf="status_check; else failed">{{message_from_server}}</p>
+      <p class="alert " *ngIf="status_check; else failed">{{message_from_server}}</p>
       <ng-template #failed> <p class="alert-">Error in generating the appointment</p> </ng-template>
     </div>
     </div>

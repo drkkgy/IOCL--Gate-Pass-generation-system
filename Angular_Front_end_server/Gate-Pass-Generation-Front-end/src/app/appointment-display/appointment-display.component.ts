@@ -144,4 +144,7 @@ export class AppointmentDisplayComponent implements OnInit {
         (error) => console.log(error)
       );
   }
+  route_to_login() {
+    this.router.navigate(['/Login']);
+  }
 }

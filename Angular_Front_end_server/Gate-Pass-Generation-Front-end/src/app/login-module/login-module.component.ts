@@ -19,7 +19,6 @@ export class LoginModuleComponent implements OnInit {
   };
   submitted = false;
   Reception = false;
-
   constructor(private serverService: ServerServiceLogin , private router: Router ) { }
 
   ngOnInit() {
@@ -36,7 +35,7 @@ export class LoginModuleComponent implements OnInit {
     this.serverService.storeServers(this.user)
       .subscribe(
         (response) => { console.log(response)
-          if(response.json().code === 200) {
+          if (response.json().code === 200) {
             this.sucess = true ;
             this.Reception = response.json().Reception;
             /*if(response.json().Reception === 'True'){

@@ -2,6 +2,7 @@ import {Component, ElementRef, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {ServerService} from './server.service';
 import {stringify} from 'querystring';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-appointmentregistrationcomponent',
@@ -9,7 +10,7 @@ import {stringify} from 'querystring';
   styleUrls: ['./appointment-registration.component.css']
 })
 export class AppointmentRegistrationComponent {
-  constructor(private serverService: ServerService) {}
+  constructor(private serverService: ServerService , private router: Router) {}
   answer = '';
   status_check = false;
   message_from_server = '';
@@ -75,6 +76,10 @@ export class AppointmentRegistrationComponent {
         },
         (error) => console.log(error)
       );
+  }
+
+  route_to_login() {
+    this.router.navigate(['/Login']);
   }
 }
 

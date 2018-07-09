@@ -23,6 +23,10 @@ export class UserRegisterComponent implements OnInit {
     Password: '',
     Reception:  false
   };
+  user1 = {
+    Username: ''
+  };
+  stat = true;
 
   ngOnInit() {
   }
@@ -32,25 +36,38 @@ export class UserRegisterComponent implements OnInit {
     this.user.Name_Of_Employee = this.signupForm.value.userData.Name_Of_Employee;
     this.user.Username = this.signupForm.value.userData.Username;
     this.user.Password = this.signupForm.value.userData.Password;
+    this.user1.Username = this.signupForm.value.userData.Username;
     console.log(this.checkBoxValue , this.user.Reception);
-    this.serverService.storeServers(this.user)
+    this.serverService.usernameCheck(this.user1)
       .subscribe(
-        (response) => { this.message_from_server = response.json().message;
-          if ( this.message_from_server === 'User Registration successfully') {
-            this.status_check = true;
-            this.activate_login = true;
+        (response) => {
+          if ( response.json().code === 200) {
+            this.stat = true;
+          } else {
+            this.stat = false;
           }
-
-        },
-        (error) => console.log(error)
+        }
       );
+    setTimeout( () => {if (this.stat) {
+      this.serverService.storeServers(this.user)
+        .subscribe(
+          (response) => {
+            this.message_from_server = response.json().message;
+            if (this.message_from_server === 'User Registration successfully') {
+              this.status_check = true;
+              this.activate_login = true;
+            }
+
+          },
+          (error) => console.log(error)
+        );
+    }}, 2000);
   }
   toggle_fun(){
     this.checkBoxValue = true;
     this.user.Reception = true;
    }
-   route_to_login()
-   {
+   route_to_login() {
      this.router.navigate(['/Login']);
    }
 

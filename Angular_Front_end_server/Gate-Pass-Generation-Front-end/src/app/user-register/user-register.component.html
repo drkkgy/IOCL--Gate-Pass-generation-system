@@ -63,5 +63,6 @@
   <div *ngIf="submitted">
     <p class="alert" *ngIf="status_check; else failed">{{message_from_server}}</p>
     <ng-template #failed> <p class="alert-">Error in registring the user</p> </ng-template>
+    <p class="alert-" *ngIf="!stat">Username Already Taken ! </p>
   </div>
 </div>

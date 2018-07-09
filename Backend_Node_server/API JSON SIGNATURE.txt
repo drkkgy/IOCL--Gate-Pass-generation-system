@@ -297,4 +297,28 @@ Responses
     "Reception": "True"
 }
 
+5.3 
 
+Username redundancy check
+
+Fire a post request 
+
+Sample request
+{
+   "Username" : "ankit12"
+}
+
+Response
+********* Existing username ********
+{
+    "code": 500,
+    "message": "Username available",
+    "status": true
+}
+
+********* Non Existing Username ********
+{
+    "code": 200,
+    "message": "Username available",
+    "status": false
+}
