@@ -157,6 +157,10 @@ Sample Request
 
 Sample Response
 
+{
+    "message": "Image Uploaded sucessfully"
+}
+
 -------------------------------------------------------------------------------------------------------------
 4.Gate Pass Generation System
 ******************************

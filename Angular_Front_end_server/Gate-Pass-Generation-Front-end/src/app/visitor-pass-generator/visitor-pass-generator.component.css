@@ -41,3 +41,15 @@ float: right;
   color: white;
 }
 
+.bim{
+  background: red;
+}
+.s{
+  background: green;
+  color: white;
+}
+
+.fail{
+  background: red;
+  color: white;
+}

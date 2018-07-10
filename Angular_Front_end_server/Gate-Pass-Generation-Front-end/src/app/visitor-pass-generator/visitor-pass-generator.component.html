@@ -10,7 +10,7 @@
 
 <div class="container col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col -md-offset-2 c1" id="print-section">
   <hr>
-  <img class= "img-fluid" alt="User Pic" src="../assets/visitor_dummy.png" width="150" height="150">
+  <img class= "img-fluid" alt="User Pic" [src]="img" width="150" height="150">
   <h1 class="modal-header">VISITORS PASS</h1>
   <hr>
   <p class="align-items-lg-center" >Visitors Name         :{{VisitorName}}</p>
@@ -22,7 +22,7 @@
   <p class="align-items-lg-center" >Purpose Of Visit      :{{PurposeOfVisit}}</p>
   <p class="align-items-lg-center" >Time Of Generation    :{{TimeOfGeneration}}</p>
   <hr>
-  <img class= "img-fluid img2" alt="User Pic" src="../assets/logo.png" width="50" height="50">
+  <img class= "img-fluid img2" alt="User Pic" src="../assets/logo.png"  width="50" height="50">
   <h6 *ngIf="condition_checker">VISITORS PASS GENERATED ON {{get_current_date[0] + '/' + get_current_date[1]
     + '/' + get_current_date[2] + '/' + get_current_date[3] + ':' + get_current_date[4]
     + ':' + get_current_date[5]}}</h6>
@@ -32,8 +32,11 @@
 
 <div class="container col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col -md-offset-2 c2">
   <button type="button" class="btn btn-primary" [disabled]="!condition_checker" (click)="Mark_Generated_File() ">GENERATE</button>
+  <button type="button" class="btn btn-primary bim" [disabled]="!condition_checker" (click)="Upload_Image()">Upload Image</button>
   <button type="button" class="btn btn-primary b*"><a class="text-center tc" routerLink="/appointment-display">BACK</a></button>
   <hr>
-  <button type="button" class="btn btn-primary" [disabled]="!isGenerated" (click)="print()">PRINT</button>
-
+  <p class="alert- s" *ngIf="isUploaded ; else img_upload_failed">Image Uploaded Success fully </p>
+  <ng-template class="alert- " #img_upload_failed><p class="alert- fail" *ngIf="upload_status">Image Upload Failed</p></ng-template>
+  <hr>
+  <button type="button" class="btn btn-primary " [disabled]="!isGenerated" (click)="print()">PRINT</button>
 </div>

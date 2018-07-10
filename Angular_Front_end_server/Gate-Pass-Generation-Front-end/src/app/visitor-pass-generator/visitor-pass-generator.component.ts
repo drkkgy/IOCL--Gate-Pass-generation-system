@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ServerServicePassGeneration} from './server.service.pass.generation';
 import {Router} from '@angular/router';
 import {Mainservice} from '../mainservice';
+import {and} from '@angular/router/src/utils/collection';
 
 
 @Component({
@@ -26,6 +27,7 @@ export class VisitorPassGeneratorComponent implements OnInit {
         this.message = temparr[9];
         this.condition_checker = temparr[10];
         this.generaation_time = temparr[11];
+        this.image_detail = temparr[12];
         this.isGenerated = !(this.condition_checker);
         console.log(this.condition_checker);
       }
@@ -33,7 +35,14 @@ export class VisitorPassGeneratorComponent implements OnInit {
     if (this.message === 'No appointment at this point in time') {
       this.status_check_sys = false ;
     }
+    setTimeout(() => {
+    if (this.isGenerated) {
+      if (this.image_detail['File_Name'] !== undefined) {
+        this.img = '../assets/' + this.image_detail['File_Name'] + '.png';
+      }
+    }}, 2000)
     console.log(this.message);
+    console.log(this.isGenerated);
   }
   // --------------
   status_check_sys = true;
@@ -49,9 +58,13 @@ export class VisitorPassGeneratorComponent implements OnInit {
   PurposeOfVisit = '  default';
   TimeOfGeneration = '  default';
   timeDict = {};
+  image_detail = {};
   message = '';
   condition_checker = true;
   generaation_time = '';
+  isUploaded = false;
+  upload_status = false;
+  img = '../assets/visitor_dummy.png';
   ngOnInit() {
   }
 
@@ -99,6 +112,24 @@ export class VisitorPassGeneratorComponent implements OnInit {
           this.status_check_sys = false;
         }},
         (error) => console.log(error)
+      );
+
+  }
+  Upload_Image() {
+    this.upload_status = true;
+    if (this.image_detail['File_Name'] != undefined) {
+      this.img = '../assets/' + this.image_detail['File_Name'] + '.png';
+    }
+    this.serverService.Visitor_Image_Upload(this.image_detail)
+      .subscribe(
+        (response) => {
+          console.log(response);
+          if (response.json().message === 'Image Uploaded sucessfully') {
+            this.isUploaded = true;
+          } else {
+            this.isUploaded = false;
+          }
+        }
       );
 
   }

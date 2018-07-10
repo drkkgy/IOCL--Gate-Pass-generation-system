@@ -1,7 +1,6 @@
 import {Component, Input, OnInit, Output} from '@angular/core';
 import {error} from 'util';
 import {ServerServiceAppointmentDisplay} from './server.service.appointment.display';
-import {VisitorPassGeneratorComponent} from '../visitor-pass-generator/visitor-pass-generator.component';
 import {Router} from '@angular/router';
 import {Mainservice} from '../mainservice';
 @Component({
@@ -18,7 +17,7 @@ export class AppointmentDisplayComponent implements OnInit {
   condition = true;
   dict = {};
   timeDict = {};
-  // *****************************
+  // *****************************************************************
   VisitorName = '  default';
   HostName = '  default';
   VisitorsCompany = '  default';
@@ -27,10 +26,11 @@ export class AppointmentDisplayComponent implements OnInit {
   VisitorsAddress = '  default';
   PurposeOfVisit = '  default';
   TimeOfGeneration = '  default';
+  GeneratedOn = 'default';
+  genstat = false;
   temparr = [];
   errCatcher = '';
-
-  // ******************************
+  // ******************************************************************
   constructor(private serverService: ServerServiceAppointmentDisplay, private router: Router, private Mservice: Mainservice) {
   }
 
@@ -110,11 +110,9 @@ export class AppointmentDisplayComponent implements OnInit {
 
   Fetch_time_stamp(time) {
     if (time.length < 60) {
-    this.timeDict = {'Time_Stamp': time.substring(41, 58)};
-    console.log(time.substring(41, 58));}
-    else{
-      this.timeDict = {'Time_Stamp': time.substring(50, 66)};
-      console.log(time.substring(50, 66));
+    this.timeDict = {'Time_Stamp': time.slice(-16)};
+    } else{
+        this.timeDict = {'Time_Stamp': time.slice(-16)};
     }
   }
   Fetch_Pass_Data(temparr: any) {
@@ -124,8 +122,9 @@ export class AppointmentDisplayComponent implements OnInit {
           console.log(response.json());
           if (response.json().code === 404) {
             this.errCatcher = response.json().message;
-          } else {
             console.log(this.errCatcher);
+            console.log(this.timeDict['Time_Stamp']);
+          } else {
             this.VisitorName = response.json().result.Name_of_visitor;
             this.HostName = response.json().result.Name_of_the_Host;
             this.VisitorsCompany = response.json().result.Visitors_company;
@@ -137,12 +136,13 @@ export class AppointmentDisplayComponent implements OnInit {
           }
           this.temparr = [this.VisitorName , this.HostName , this.VisitorsCompany, this.VisitorsAge ,
            this.VisitorsDesignation , this.VisitorsAddress , this.PurposeOfVisit , this.TimeOfGeneration ,
-            this.timeDict , this.errCatcher, this.condition, response.json().result.Pass_Generated_On ];
+            this.timeDict , this.errCatcher, this.condition, response.json().result.Pass_Generated_On , {'Name_of_visitor': this.VisitorName
+          , 'Time_Stamp': this.TimeOfGeneration, 'File_Name': this.VisitorName} ];
           this.Mservice.TrasferData.emit(this.temparr);
         },
         (error) => console.log(error)
       );
-    setTimeout(() => {this.router.navigate(['/visitor-pass-generation']) } , 10);
+    setTimeout(() => {this.router.navigate(['/visitor-pass-generation']); } , 10);
     }
   onGetGen() {
     this.submitted1 = true;
@@ -155,9 +155,9 @@ export class AppointmentDisplayComponent implements OnInit {
             this.status_check1 = false;
           }
           this.servers = [];
-          for (let i in response.json().result) {this.servers.push('Pass for ' + response.json().result[i].Name_of_visitor
-            + ' Is Invited by ' +  response.json().result[i].Name_of_the_Host
-              + ' on ' + response.json().result[i].Time_Stamp + ' Generated on ' + response.json().result[i].Pass_Generated_On); }
+          for (let i in response.json().result) {this.servers.push('Pass for ' + response.json().result[i].Name_of_visitor +
+            ' Generated on ' + response.json().result[i].Pass_Generated_On + ' Invited by ' +  response.json().result[i].Name_of_the_Host
+              + ' on ' + response.json().result[i].Time_Stamp); }
           console.log(this.servers);},
         (error) => console.log(error)
       );
