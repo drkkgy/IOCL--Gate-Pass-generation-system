@@ -14,7 +14,9 @@ To use the system please install following softwares.
    Steps to navigate to collections :-
    
    1 Link to Mlab Hosting Login Page :- https://mlab.com/login/
+   
    2 Click on Iocl_gate_pass_booking Deployment
+   
    3 Now click on any of the collections to view them
 
 4. To start the server instance open following directory in the command-prompt/terminal
@@ -34,4 +36,10 @@ To use the system please install following softwares.
    2. Now run ng serve                                  [To start the angular server insure Angular Cli is installed to]
                                                         [execute the command]
    3. Now open url :- http://127.0.0.1:4200/Login       [To Test Front end Server ]
+   
+   ** Ensure Internet connection is working and the database is accessible **
+   
+   Now The app should be up and running in a local host environment 
+   
+   For any furthure query or issue feel free to whatsaap on 8285158558
    
