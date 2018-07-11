@@ -95,7 +95,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="189" />
     <option name="y" value="31" />
     <option name="width" value="1244" />
@@ -165,7 +165,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="189" y="31" width="1244" height="825" extended-state="1" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.829703" visible="true" weight="0.20578778" />
       <window_info anchor="bottom" id="TODO" order="6" />
